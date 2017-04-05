@@ -6,7 +6,7 @@
  * Time: 15:09
  */
 
-namespace Source\Controller\Unauthorized;
+namespace Source\Controller\Authorized;
 
 
 use Source\Controller\AbstractController;

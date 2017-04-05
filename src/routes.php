@@ -19,7 +19,7 @@ $app->get("/error", function($request, $response) use($container){
     return $container->get('view')->render($response, '@views/errorPage.twig');
 })->setName("unauthorized");
 
-// Unauthorized Routes (public)
+// authorized Routes (public)
 $app->group("", function () {
 
     // ************** Homepage - Routes **************
@@ -46,13 +46,11 @@ $app->group("", function () {
  });
 
 
-// authorized Routes - available only for logged in users
+// unauthorized Routes - available only for logged in users
 $app->group("", function () {
-    $container = $this->getContainer();
-
     // admin - routes - only the admin should be able to access these routes!
     $this->group("", function(){
 
     });//->add(new AdminMiddleware($container));
 
-});//->add(new AuthorizedMiddleware($container));
+});//->add(new AuthorisationMiddleware($container));
