@@ -1,0 +1,36 @@
+<div class="col-sm-4">
+    <div class="well well-sm div-background">
+        <form action="{{ path_for('calculator.post') }}" method="post">
+            <div class="form-group ">
+                <label for="postalcode">Postleitzahl:</label>
+                <input id="postalcode" type="text" class="form-control" name="postalcode"
+                       placeholder="Postleitzahl">
+            </div>
+            <div class="form-group ">
+                <label for="kwh">Ihr Verbrauch in KWh:</label>
+                <input id="kwh" type="text" class="form-control" name="kwh" placeholder="3500">
+            </div>
+            <div class="form-group ">
+                <label for="radio-line">Anzahl Personen:</label>
+                <div id="radio-line">
+                    <label class="radio-inline">
+                        <input type="radio" id="radio1" name="optradio">1
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" id="radio2" name="optradio">2
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" id="radio3" name="optradio" checked="checked">3
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" id="radio4" name="optradio">4+
+                    </label>
+                </div>
+            </div>
+            <div class="form-group ">
+                <button type="submit" class="btn btn-default">Berechnen</button>
+            </div>
+        </form>
+    </div>
+</div>
+
