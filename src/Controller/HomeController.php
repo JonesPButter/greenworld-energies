@@ -12,7 +12,6 @@ use \Psr\Http\Message\ResponseInterface;
 
 class HomeController extends AbstractController {
     public function index($request, ResponseInterface $response, $args) {
-        $response->withStatus(200);
         return $this->view->render($response, '@views/home.twig');
     }
 }

@@ -1,7 +1,9 @@
 <?php
-
 namespace Tests\Functional;
 
+//session_start(); // Important
+# running from the cli doesn't set $_SESSION here on phpunit trunk
+if ( !isset( $_SESSION ) ) $_SESSION = array(  );
 use Slim\App;
 use Slim\Http\Request;
 use Slim\Http\Response;
@@ -52,21 +54,20 @@ class BaseTestCase extends \PHPUnit_Framework_TestCase
         // Set up a response object
         $response = new Response();
 
-        // Use the application settings
-        $settings = require __DIR__ . '/../../src/settings.php';
+        // *********** Require Autoloading for making all classes available ***********
+        require __DIR__ . '/../../vendor/autoload.php';
 
-        // Instantiate the application
+        // *********** Instantiate the app ***********
+        $settings = require __DIR__ . '/../../src/settings.php';
         $app = new App($settings);
 
-        // Set up dependencies
+        // *********** Set up dependencies ***********
         require __DIR__ . '/../../src/dependencies.php';
 
-        // Register middleware
-        if ($this->withMiddleware) {
-            require __DIR__ . '/../../src/middleware.php';
-        }
+        // *********** Register middleware ***********
+        require __DIR__ . '/../../src/middleware.php';
 
-        // Register routes
+        // *********** Register routes ***********
         require __DIR__ . '/../../src/routes.php';
 
         // Process the application

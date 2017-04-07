@@ -21,10 +21,10 @@ return [
             'level' => \Monolog\Logger::DEBUG,
         ],
         'db' => [
-            'host' => 'localhost:3306',
+            'host' => 'localhost',
             'name' => 'greenworld-energys',
             'username' => 'root',
-            'password' => '1234567',
+            'password' => '',//'1234567',
             'driver' => 'mysql',
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
