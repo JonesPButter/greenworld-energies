@@ -6,10 +6,8 @@
  * Time: 15:09
  */
 
-namespace Source\Controller\Authorized;
+namespace Source\Controller;
 
-
-use Source\Controller\AbstractController;
 
 class PriceCalculationController extends AbstractController
 {

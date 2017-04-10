@@ -1,6 +1,6 @@
 <?php
 
-namespace Source\Controller\Authorized;
+namespace Source\Controller\Authorization;
 
 use Respect\Validation\Validator as Validator;
 use Source\Controller\AbstractController;
