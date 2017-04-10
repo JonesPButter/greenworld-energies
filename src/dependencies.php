@@ -7,8 +7,9 @@ use Psr\Container\ContainerInterface;
 use Slim\Flash\Messages;
 use Slim\Views\Twig;
 use Slim\Views\TwigExtension;
-use Source\Controller\Authorization\LoginController;
-use Source\Controller\Authorization\RegistrationController;
+use Source\Controller\Authorization\SignInController;
+use Source\Controller\Authorization\SignUpController;
+use Source\Controller\DashboardController;
 use Source\Controller\HomeController;
 use Source\Controller\PriceCalculationController;
 use Source\Models\Auth\Auth;
@@ -96,14 +97,17 @@ $container['auth'] = function (ContainerInterface $container) {
 $container['HomeController'] = function (ContainerInterface $container) {
     return new HomeController($container->get('view'),$container->get('router'));
 };
-$container['LoginController'] = function (ContainerInterface $container) {
-    return new LoginController($container->get('view'),$container->get('router'));
+$container['SignInController'] = function (ContainerInterface $container) {
+    return new SignInController($container->get('view'),$container->get('router'));
 };
-$container['RegistrationController'] = function (ContainerInterface $container) {
-    return new RegistrationController($container->get('view'),$container->get('router'));
+$container['SignUpController'] = function (ContainerInterface $container) {
+    return new SignUpController($container->get('view'),$container->get('router'));
 };
 $container['PriceCalculationController'] = function (ContainerInterface $container) {
     return new PriceCalculationController($container->get('view'),$container->get('router'));
+};
+$container['DashboardController'] = function (ContainerInterface $container) {
+    return new DashboardController($container->get('view'),$container->get('router'));
 };
 
 // *** Data Access Objects (DAOs)***

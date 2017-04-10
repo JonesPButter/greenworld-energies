@@ -30,12 +30,12 @@ $app->group("", function () {
     });
 
     // Login
-    $this->get("/login", 'LoginController:getLogin')->setName("login");
-    $this->post("/login", 'LoginController:postLogin')->setName("login.post");
+    $this->get("/login", 'SignInController:getLogin')->setName("signIn");
+    $this->post("/login", 'SignInController:postLogin')->setName("signIn.post");
 
     // Registration
-    $this->get("/registration", 'RegistrationController:getRegistration')->setName("registration");
-    $this->post("/registration", 'RegistrationController:postRegistration')->setName("registration.post");
+    $this->get("/registration", 'SignUpController:getRegistration')->setName("signUp");
+    $this->post("/registration", 'SignUpController:postRegistration')->setName("signUp.post");
 
     // Price calculator
     $this->get("/calculator", 'PriceCalculationController:getPriceCalculator')->setName("calculator");
@@ -45,6 +45,9 @@ $app->group("", function () {
 
 // unauthorized Routes - available only for logged in users
 $app->group("", function () {
+
+    $this->get("/user/dashboard", 'DashboardController:getDashboard')->setName('dashboard');
+
     // admin - routes - only the admin should be able to access these routes!
     $this->group("", function(){
 

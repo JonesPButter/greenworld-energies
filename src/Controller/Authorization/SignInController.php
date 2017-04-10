@@ -11,13 +11,14 @@ namespace Source\Controller\Authorization;
 
 use Source\Controller\AbstractController;
 
-class LoginController extends AbstractController
+class SignInController extends AbstractController
 {
     public function getLogin($request, $response, $args){
-        return $this->view->render($response, '@forms/loginForm.twig');
+        return $this->view->render($response, '@forms/signIn.twig');
     }
 
     public function postLogin($request, $response, $args){
+
         die("Route login.post should be implemented!");
     }
 }
