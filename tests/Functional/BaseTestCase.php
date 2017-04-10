@@ -1,14 +1,13 @@
 <?php
 namespace Tests\Functional;
 
-//session_start(); // Important
-# running from the cli doesn't set $_SESSION here on phpunit trunk
-if ( !isset( $_SESSION ) ) $_SESSION = array(  );
 use Slim\App;
 use Slim\Http\Request;
 use Slim\Http\Response;
 use Slim\Http\Environment;
 use Psr\Http\Message\ResponseInterface;
+use Source\Models\Helpers\SessionHelper;
+
 
 /**
  * This is an example class that shows how you could set up a method that
@@ -35,6 +34,8 @@ class BaseTestCase extends \PHPUnit_Framework_TestCase
      */
     public function runApp($requestMethod, $requestUri, $requestData = null)
     {
+        SessionHelper::init(); // regular sessions don't work on cli
+
         // Create a mock environment for testing with
         $environment = Environment::mock(
             [
@@ -59,6 +60,8 @@ class BaseTestCase extends \PHPUnit_Framework_TestCase
 
         // *********** Instantiate the app ***********
         $settings = require __DIR__ . '/../../src/settings.php';
+        $settings['settings']['db']['test_mode'] = true; // turn on test_mode. database Adapter will communicate with test db
+
         $app = new App($settings);
 
         // *********** Set up dependencies ***********

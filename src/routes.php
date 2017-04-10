@@ -4,9 +4,6 @@
  * warning: put the most specific route to the top!
  * Don't forget about the namespaces!
  */
-use \Source\Middleware\AdminMiddleware;
-use \Source\Middleware\AuthorizedMiddleware;
-use \Source\Middleware\ClientCertificateMiddleware;
 
 // **************************** ROUTES ****************************
 

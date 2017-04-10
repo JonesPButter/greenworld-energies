@@ -13,7 +13,9 @@ use Source\Models\DBAdapters\DatabaseAdapter;
 class AbstractDAO {
     /** @var DatabaseAdapter  */
     protected $dbAdapter;
-    protected $tablename;
+    protected $tables;
+    /** @var  \FluentPDO */
+    protected $fpdo;
 
     /**
      * AbstractDAO constructor.
@@ -21,6 +23,8 @@ class AbstractDAO {
      */
     public function __construct(DatabaseAdapter $dbAdapter) {
         $this->dbAdapter = $dbAdapter;
-        $this->tablename = $this->dbAdapter->getTablenames()['user-table'];
+        $pdo = $this->dbAdapter->getConnection();
+        $this->fpdo = new \FluentPDO($pdo);
+        $this->tables = $this->dbAdapter->getTables();
     }
 }

@@ -8,9 +8,21 @@
 
 namespace Source\Models\DAOs;
 
+use Source\Models\DBAdapters\DatabaseAdapter;
 use Source\Models\User;
 
 class UserDAO extends AbstractDAO {
+
+    private $table;
+
+    /**
+     * AbstractDAO constructor.
+     * @param DatabaseAdapter $dbAdapter
+     */
+    public function __construct(DatabaseAdapter $dbAdapter) {
+        parent::__construct($dbAdapter);
+        $this->table = $this->tables['user_table'];
+    }
 
     /**
      * Creates a new User and saves it into the database.
@@ -18,48 +30,34 @@ class UserDAO extends AbstractDAO {
      * @param $password - the users password
      * @param $role - the users role
      * @param $token - the security token
-     * @return User - the created user
-     * @throws \PDOException
+     * @returns string | false - the id or false if inserting was not possible
      */
     public function createUser($email, $password, $role, $token) {
-        $date = date($this->dbAdapter->getDateformat());
-        $user = new User(null, $email, $password, $role, $token,false, $date,$date);
-        try{
-            $sql_query = sprintf('INSERT INTO' . ' %s (id, email, password, role, token, verified, createdAt, updatedAt) 
-                VALUES (NULL, :email, :password, :role, :token, false, :date, :date)',$this->tablename);
-            $stmt = $this->dbAdapter->getConnection()->prepare($sql_query);
-            $stmt->execute(compact('email', 'password', 'role', 'token', 'date'));
-        } catch (\PDOException $e) {
-            throw $e;
-        }
-        return $user;
+        $verified = false;
+        $createdAt = date($this->dbAdapter->getDateFormat());
+        $updatedAt = $createdAt;
+        $values = compact('id', 'email', 'password', 'role', 'token', 'verified', 'createdAt', 'updatedAt');
+        return $this->fpdo->insertInto($this->table, $values)->execute();
     }
 
     /**
      * Returns all Users.
-     * @return array|null - the usertable represented as an array of User-objects
+     * @return array|null - the user table represented as an array of User-objects
      * @throws
      */
     public function getUsers() {
         $users = null;
-        try {
-            $sql_query = sprintf('SELECT * FROM' . ' %s',$this->tablename);
-            $result = $this->dbAdapter->getConnection()->query($sql_query);
-            if($result){
-                foreach($result as $row){
-                    $user = new User($row["id"],
-                        $row["email"],
-                        $row["password"],
-                        $row["role"],
-                        $row["token"],
-                        $row["verified"],
-                        $row["createdAt"],
-                        $row["updatedAt"]);
-                    $users[] = $user;
-                }
-            }
-        } catch (\Exception $e) {
-            throw $e;
+        $query = $this->fpdo->from($this->table);
+        foreach ($query as $row) {
+            $user = new User($row["id"],
+                $row["email"],
+                $row["password"],
+                $row["role"],
+                $row["token"],
+                $row["verified"],
+                $row["createdAt"],
+                $row["updatedAt"]);
+            $users[] = $user;
         }
         return $users;
     }
@@ -71,23 +69,16 @@ class UserDAO extends AbstractDAO {
      */
     public function getUserByEmail($email) {
         $user = null;
-        try {
-            $sql_query = sprintf('SELECT * FROM' . ' %s WHERE email = :email',$this->tablename);
-            $stmt = $this->dbAdapter->getConnection()->prepare($sql_query);
-            $stmt->execute(compact('email'));
-            $result = $stmt->fetch();
-            if($result){
-                $user = new User($result["id"],
-                    $result["email"],
-                    $result["password"],
-                    $result["role"],
-                    $result["token"],
-                    $result["verified"],
-                    $result["createdAt"],
-                    $result["updatedAt"]);
-            }
-        } catch (\PDOException $e) {
-            throw $e;
+        $result = $this->fpdo->from($this->table)->where('email', $email)->fetch();
+        if ($result) {
+            $user = new User($result["id"],
+                $result["email"],
+                $result["password"],
+                $result["role"],
+                $result["token"],
+                $result["verified"],
+                $result["createdAt"],
+                $result["updatedAt"]);
         }
         return $user;
     }
@@ -99,11 +90,11 @@ class UserDAO extends AbstractDAO {
     public function getUserByID($id) {
         $user = null;
         try {
-            $sql_query = sprintf('SELECT * FROM' . ' %s WHERE id = :id',$this->tablename);
+            $sql_query = sprintf('SELECT * FROM' . ' %s WHERE id = :id', $this->table);
             $stmt = $this->dbAdapter->getConnection()->prepare($sql_query);
             $stmt->execute(compact('id'));
             $result = $stmt->fetch();
-            if($result){
+            if ($result) {
                 $user = new User($result["id"],
                     $result["email"],
                     $result["password"],
@@ -134,23 +125,21 @@ class UserDAO extends AbstractDAO {
         $updatedAt = $user->getUpdatedAt();
         try {
             $sql_query = sprintf('UPDATE ' . '%s SET email=:email, password=:pw, role=:role, token=:token, 
-                verified=:verified, createdAt=:createdAT, updatedAt=:updatedAT WHERE id=:id',$this->tablename);
+                verified=:verified, createdAt=:createdAT, updatedAt=:updatedAT WHERE id=:id', $this->table);
             $stmt = $this->dbAdapter->getConnection()->prepare($sql_query);
-            $stmt->execute(compact('email','pw', 'role','token','verified','createdAt','updatedAt','id'));
+            $stmt->execute(compact('email', 'pw', 'role', 'token', 'verified', 'createdAt', 'updatedAt', 'id'));
         } catch (\PDOException $e) {
             throw $e;
         }
         return $user;
     }
 
-    public function deleteUser($id){
-        try {
-            $sql_query = sprintf('DELETE FROM' . ' %s WHERE id = :id',$this->tablename);
-            $stmt = $this->dbAdapter->getConnection()->prepare($sql_query);
-            $stmt->execute(compact('id'));
-        } catch (\PDOException $e) {
-            throw $e;
-        }
+    /**
+     * @param $id
+     * @return bool | int 1 if it was a success, false if it failed
+     */
+    public function deleteUser($id) {
+        return $this->fpdo->deleteFrom($this->table,$id)->execute();
     }
 
 }

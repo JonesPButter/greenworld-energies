@@ -76,6 +76,7 @@ $container['dbAdapter'] = function (ContainerInterface $container) {
     try{
         $dbAdapter = new DatabaseAdapter($settings);
     } catch(\PDOException $e){
+        echo $e;
         require __DIR__ . '/../src/views/errorPage.twig';
         die();
     }

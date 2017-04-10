@@ -9,12 +9,11 @@
  *              A Slim App will be created, featuring dependencies, settings and routes.
  */
 
-session_cache_limiter(false);
-date_default_timezone_set('Europe/Berlin');
-session_start();
 
 // *********** Require Autoloading for making all classes available ***********
 require __DIR__ . '/../vendor/autoload.php';
+
+\Source\Models\Helpers\SessionHelper::init(); // start the session
 
 // *********** Instantiate the app ***********
 $settings = require __DIR__ . '/../src/settings.php';

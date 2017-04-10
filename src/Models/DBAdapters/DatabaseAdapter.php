@@ -21,7 +21,7 @@ class DatabaseAdapter {
     protected $dbname;
     protected $dbuser;
     protected $dbpass;
-    protected $tablenames;
+    protected $tables;
     protected $dateformat;
     /** @var  \PDO */
     protected $dbConnection;
@@ -32,21 +32,41 @@ class DatabaseAdapter {
 
     /**
      * DatabaseAdapter constructor.
-     * @param $settings - The DB-settings (containing host information, tablenames, etc.)
+     * @param $settings - The DB-settings (containing host information, table-names, etc.)
+     *
+     * Example:
+     * 'settings' => [
+     *     'test_mode' => false,
+     *     'host' => 'localhost',
+     *     'name' => 'some-database',
+     *     'username' => 'root',
+     *     'password' => 'password',
+     *     'driver' => 'mysql',
+     *     'charset' => 'utf8',
+     *     'collation' => 'utf8_unicode_ci',
+     *     'date_format' => 'y-m-d',
+     *     'tables' => [
+     *         'user_table' => 'user',
+     *         'customer_table' => 'customer',
+     *     ],
+     * ],
      * @throws \PDOException
      */
     function __construct($settings) {
         $this->dbhost = $settings['host'];
         $this->dbuser = $settings['username'];
         $this->dbpass = $settings['password'];
-        $this->dbname = $settings['name'];
-        $this->tablenames = $settings['tablenames'];
-        $this->dateformat = $settings['dateformat'];
+        if ($settings['test_mode']) {
+            $this->dbname = $settings['name'] . '-test';
+        } else {
+            $this->dbname = $settings['name'];
+        }
+        $this->tables = $settings['tables'];
+        $this->dateformat = $settings['date_format'];
         $this->charset = $settings['charset'];
         $this->collation = $settings['collation'];
         try {
             $this->dbConnection = new \PDO ("mysql:host=$this->dbhost;dbname=$this->dbname", $this->dbuser, $this->dbpass);
-            $this->dbConnection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         } catch (\PDOException $e) {
             throw $e;
         }
@@ -55,14 +75,14 @@ class DatabaseAdapter {
     /**
      * @return array - the tablenames
      */
-    function getTablenames(){
-        return $this->tablenames;
+    function getTables() {
+        return $this->tables;
     }
 
     /**
      * @return string - the used dateformat
      */
-    public function getDateformat() {
+    public function getDateFormat() {
         return $this->dateformat;
     }
 
@@ -70,8 +90,8 @@ class DatabaseAdapter {
      * @return \PDO the Database-Connection
      * @throws \PDOException
      */
-    function getConnection(){
-        if($this->dbConnection == null){
+    function getConnection() {
+        if ($this->dbConnection == null) {
             try {
                 $this->dbConnection = new \PDO ("mysql:host=$this->dbhost;dbname=$this->dbname", $this->dbuser, $this->dbpass);
                 $this->dbConnection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);

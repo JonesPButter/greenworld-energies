@@ -21,18 +21,20 @@ return [
             'level' => \Monolog\Logger::DEBUG,
         ],
         'db' => [
+            'test_mode' => false, // should be false. Only the test classes should change this value
             'host' => 'localhost',
-            'name' => 'greenworld-energys',
+            'name' => 'greenworld-energies',
             'username' => 'root',
             'password' => '',//'1234567',
             'driver' => 'mysql',
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
-            'dateformat' => 'y-m-d',
-            'tablenames' => [
-                'user-table' => 'user',
-                'customer-table' => 'customer',
+            'date_format' => 'y-m-d',
+            'tables' => [
+                'user_table' => 'user',
+                'customer_table' => 'customer',
             ],
         ],
+        'configuration_mode' => 'development', // or 'production'
     ],
 ];
