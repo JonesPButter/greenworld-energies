@@ -2,30 +2,57 @@
 
 {% block content %}
     <div class="container">
-        <div class="alert-success">
-            <div class="page-header">
-                <h1><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Greenworld Energys <small>Grüne Energie für eine grüne Welt!</small> </h1>
-                <h2></h2>
-            </div>
-        </div>
+
     </div>
     <div class="container">
         <div class="row">
             <div class="col-sm-8">
-                <div class="jumbotron">
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                <div class="jumbotron table-bordered">
+                    <div class="page-header custom-header">
+                        <h1>
+                            <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+                            <br>Greenworld Energies
+                        </h1>
+                        <h3>Grüne Energie für eine grüne Welt!</h3>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+                        ut
                         labore
-                        et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+                        et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
+                        ea
                         rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
                         ipsum
                         dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
                         dolore
                         magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
                         Stet
-                        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                    </p>
+                    <br><br>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="well well-sm">
+                    <img src="{{ base_url() }}/assets/img/earth-small.png" class="img-responsive" alt="Cinque Terre">
                 </div>
             </div>
             {{ include('@forms/priceCalculatorForm.twig') }}
+            <div class="col-sm-4">
+                <div class="well well-sm">
+                    <div class="form-group ">
+                        <h2>Kundenservice</h2>
+                        <div class="form-group">
+                            <label>Telefon:</label>
+                            040 / 12 34 567 <br>
+                            <label>Erreichbarkeit:</label>
+                            (Mo. - Fr. : 8-20 Uhr) <br>
+                            <label>Email:</label>
+                            kundenservice@gwe.de
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>

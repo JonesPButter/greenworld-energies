@@ -3,34 +3,27 @@ body {
     padding-bottom: 40px;
 }
 
+/* ***************************************** Navigationbar ******************************************/
+
+/* The Navigationbar */
 .navbar-custom {
     background-color: #229922;
     color: #ffffff;
     border-radius: 0;
+    border-color: #0f0f0f;
 }
 
+/* The Color of Navigation-Items and Links*/
 .navbar-custom .navbar-nav > li > a {
     color: #fff;
 }
 
-.navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
-    color: #ffffff;
-    background-color: transparent;
-}
-
 .navbar-custom .navbar-brand {
-    color: #eeeeee;
-}
-
-.div-background {
-    background-color: #229922;
     color: #ffffff;
-    border-radius: 0;
 }
 
-/*
- * Sidebar
- */
+
+/* ***************************************** Sidebar ******************************************/
 
 /* Hide for mobile, show later */
 .sidebar {
@@ -48,8 +41,8 @@ body {
         padding: 20px;
         overflow-x: hidden;
         overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-        background-color: #f5f5f5;
         border-right: 1px solid #eee;
+
     }
 }
 
@@ -58,57 +51,34 @@ body {
     margin-right: -21px; /* 20px padding + 1px border */
     margin-bottom: 20px;
     margin-left: -20px;
+    text-align: center;
+    list-style: none;
 }
 
 .nav-sidebar > li > a {
+    color: #0f0f0f;
     padding-right: 20px;
     padding-left: 20px;
 }
 
-.nav-sidebar > .active > a,
-.nav-sidebar > .active > a:hover,
-.nav-sidebar > .active > a:focus {
-    color: #fff;
-    background-color: #229922;
-}
+/* ***************************************** Content ******************************************/
 
-/*
- * Main content
- */
-
-.main {
-    padding: 20px;
-}
-
-@media (min-width: 768px) {
-    .main {
-        padding-right: 40px;
-        padding-left: 40px;
-    }
-}
-
-.main .page-header {
-    margin-top: 0;
-}
-
-/*
- * Placeholder dashboard ideas
- */
-
-.placeholders {
-    margin-bottom: 30px;
+.custom-header{
     text-align: center;
+    color: #229922;
 }
 
-.placeholders h4 {
-    margin-bottom: 0;
+.well-sm{
+    border-color: #0f0f0f;
 }
 
-.placeholder {
-    margin-bottom: 20px;
+.jumbotron{
+    border-color: #0f0f0f;
 }
 
-.placeholder img {
-    display: inline-block;
-    border-radius: 50%;
+.priceCalculator {
+    background-color: #229922;
+    color: #ffffff;
+    border-radius: 10px;
+    border-color: #0f0f0f;
 }
