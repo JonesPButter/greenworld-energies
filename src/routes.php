@@ -22,31 +22,36 @@ $app->group("", function () {
     // ************** Homepage - Routes **************
     // Get the Homepage
     $this->get("/home", 'HomeController:index')->setName("home");
-
     // Redirect to Homepage
-    $container = $this->getContainer();
-    $this->get("/", function ($request, $response) use ($container) {
-        return $response->withRedirect($container->router->pathFor('home'));
-    });
-
-    // Login
-    $this->get("/login", 'SignInController:getLogin')->setName("signIn");
-    $this->post("/login", 'SignInController:postLogin')->setName("signIn.post");
-
-    // Registration
-    $this->get("/registration", 'SignUpController:getRegistration')->setName("signUp");
-    $this->post("/registration", 'SignUpController:postRegistration')->setName("signUp.post");
+    $this->get("/", 'HomeController:redirect');
 
     // Price calculator
     $this->get("/calculator", 'PriceCalculationController:getPriceCalculator')->setName("calculator");
     $this->post("/calculator", 'PriceCalculationController:postCalculatePrice')->setName("calculator.post");
- });
+
+    $this->group("/userservice", function(){
+        // Login
+        $this->get("/login", 'SignInController:getLogin')->setName("/userservice/signIn");
+        $this->post("/login", 'SignInController:postLogin')->setName("/userservice/signIn.post");
+
+        // Registration
+        $this->get("/registration", 'SignUpController:getRegistration')->setName("/userservice/signUp");
+        $this->post("/registration", 'SignUpController:postRegistration')->setName("/userservice/signUp.post");
+    });
+
+});
 
 
 // unauthorized Routes - available only for logged in users
 $app->group("", function () {
 
-    $this->get("/user/dashboard", 'DashboardController:getDashboard')->setName('dashboard');
+    $this->group("/userservice/dashboard", function(){
+        $this->get("", 'DashboardController:redirect');
+        $this->get("/", 'DashboardController:redirect')->setName('/dashboard');
+        $this->get("/overview", 'DashboardController:getOverviewPage')->setName('/dashboard/overview');
+        $this->get("/data", 'DashboardController:getDataPage')->setName('/dashboard/data');
+        $this->get("/meter", 'DashboardController:getMeterPage')->setName('/dashboard/meter');
+    });
 
     // admin - routes - only the admin should be able to access these routes!
     $this->group("", function(){

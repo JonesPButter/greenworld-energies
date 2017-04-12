@@ -33,12 +33,12 @@
                     {% endif %}
                 {% else %}
                     <li>
-                        <a href="{{ path_for('signIn') }}">
+                        <a href="{{ path_for('/userservice/signIn') }}">
                             <i class="fa fa-address-card" aria-hidden="true"></i>
                             Kundenbereich
                         </a>
                     </li>
-                    <li><a href="{{ path_for('signUp') }}">Neuer Kunde</a></li>
+                    <li><a href="{{ path_for('/userservice/signUp') }}">Neuer Kunde</a></li>
                 {% endif %}
             </ul>
         </div><!-- /.navbar-collapse -->

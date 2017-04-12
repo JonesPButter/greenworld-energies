@@ -14,4 +14,8 @@ class HomeController extends AbstractController {
     public function index($request, ResponseInterface $response, $args) {
         return $this->view->render($response, '@views/home.twig');
     }
+
+    public function redirect($request,ResponseInterface $response){
+        return $response->withRedirect($this->router->pathFor('home'));
+    }
 }

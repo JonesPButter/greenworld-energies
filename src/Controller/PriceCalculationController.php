@@ -14,7 +14,7 @@ class PriceCalculationController extends AbstractController
 
     public function getPriceCalculator($request, $response)
     {
-        return $this->view->render($response, 'priceCalculatorForm.twig');
+        return $this->view->render($response, '@tarifhandling/priceCalculatorForm.twig');
     }
 
     /**

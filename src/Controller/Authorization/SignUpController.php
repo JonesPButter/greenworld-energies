@@ -12,7 +12,7 @@ class SignUpController extends AbstractController {
      * which shows the registration form.
      */
     public function getRegistration($request, $response) {
-        return $this->view->render($response, '@forms/signup.twig');
+        return $this->view->render($response, '@authorization/signup.twig');
     }
 
     /**

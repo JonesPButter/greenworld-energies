@@ -14,7 +14,7 @@ use Source\Controller\AbstractController;
 class SignInController extends AbstractController
 {
     public function getLogin($request, $response, $args){
-        return $this->view->render($response, '@forms/signIn.twig');
+        return $this->view->render($response, '@authorization/signIn.twig');
     }
 
     public function postLogin($request, $response, $args){

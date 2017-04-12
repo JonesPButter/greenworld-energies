@@ -1,0 +1,26 @@
+<div class="col-sm-3 col-md-2 sidebar">
+    <ul class="nav nav-sidebar">
+        <li>
+            <i class="fa fa-bar-chart" aria-hidden="true"></i>
+            <a href="{{ path_for('/dashboard/overview') }}">Übersicht</a>
+        </li>
+        <li>
+            <i class="fa fa-user-circle" aria-hidden="true"></i>
+            <a href="{{ path_for('/dashboard/data') }}">Meine Daten</a>
+        </li>
+        <li>
+            <i class="fa fa-plug" aria-hidden="true"></i>
+            <a href="{{ path_for('/dashboard/meter') }}">Zählerstand eintragen</a>
+        </li>
+    </ul>
+
+    <img src="{{ base_url() }}/assets/img/earth-small.png" class="img-responsive" alt="Cinque Terre">
+    <br>
+    <ul class="nav nav-sidebar">
+        <li>
+            <i class="fa fa-comments" aria-hidden="true"></i>
+            <a href="">Hilfe</a>
+        </li>
+    </ul>
+
+</div>

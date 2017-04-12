@@ -9,8 +9,10 @@ return [
             'template_paths' => [
                 '__main__' => __DIR__ . '/../src/views',
                 'views' => __DIR__ . '/../src/views',
-                'forms' => __DIR__ . '/../src/views/forms',
+                'tarifhandling' => __DIR__ . '/../src/views/tarifhandling',
+                'authorization' => __DIR__ . '/../src/views/authorization',
                 'partials' => __DIR__ . '/../src/views/partials',
+                'dashboard' => __DIR__ . '/../src/views/dashboard',
             ],
         ],
 

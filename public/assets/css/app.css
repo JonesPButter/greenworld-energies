@@ -41,8 +41,7 @@ body {
         padding: 20px;
         overflow-x: hidden;
         overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-        border-right: 1px solid #eee;
-
+        border-right: 1px solid #229922;
     }
 }
 
@@ -73,7 +72,11 @@ body {
 }
 
 .jumbotron{
-    border-color: #0f0f0f;
+    box-shadow: 5px 5px 5px #888888;
+}
+
+.border-color{
+    box-shadow: 5px 5px 5px #888888;
 }
 
 .priceCalculator {
