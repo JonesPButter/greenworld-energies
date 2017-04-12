@@ -9,15 +9,18 @@
 namespace Source\Controller;
 use Slim\Interfaces\RouterInterface;
 use Slim\Views\Twig;
+use Source\Models\DAOs\UserDAO;
 
 abstract class AbstractController
 {
     protected $view;
     protected $router;
+    protected $userDAO;
 
     //Constructor
-    public function __construct(Twig $view, RouterInterface $router) {
+    public function __construct(Twig $view, RouterInterface $router, UserDAO $userDAO) {
         $this->view = $view;
         $this->router = $router;
+        $this->userDAO = $userDAO;
     }
 }

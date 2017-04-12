@@ -15,6 +15,7 @@ use Source\Controller\PriceCalculationController;
 use Source\Models\Auth\Auth;
 use Source\Models\DAOs\UserDAO;
 use Source\Models\DBAdapters\DatabaseAdapter;
+use Respect\Validation\Validator as v;
 
 /*
  * DIC configuration
@@ -92,21 +93,26 @@ $container['auth'] = function (ContainerInterface $container) {
     return new Auth($userDAO);
 };
 
+/*
+ * Form validation rules - this is used by the Respect Validator Framework
+ */
+v::with('Source\\Models\\Helpers\\FormValidators\\Validation\\Rules\\');
+
 // *** Controllers ***
 $container['HomeController'] = function (ContainerInterface $container) {
-    return new HomeController($container->get('view'),$container->get('router'));
+    return new HomeController($container->get('view'),$container->get('router'),$container->get('userDAO'));
 };
 $container['SignInController'] = function (ContainerInterface $container) {
-    return new SignInController($container->get('view'),$container->get('router'));
+    return new SignInController($container->get('view'),$container->get('router'),$container->get('userDAO'));
 };
 $container['SignUpController'] = function (ContainerInterface $container) {
-    return new SignUpController($container->get('view'),$container->get('router'));
+    return new SignUpController($container->get('view'),$container->get('router'),$container->get('userDAO'));
 };
 $container['PriceCalculationController'] = function (ContainerInterface $container) {
-    return new PriceCalculationController($container->get('view'),$container->get('router'));
+    return new PriceCalculationController($container->get('view'),$container->get('router'),$container->get('userDAO'));
 };
 $container['DashboardController'] = function (ContainerInterface $container) {
-    return new DashboardController($container->get('view'),$container->get('router'));
+    return new DashboardController($container->get('view'),$container->get('router'),$container->get('userDAO'));
 };
 
 // *** Data Access Objects (DAOs)***

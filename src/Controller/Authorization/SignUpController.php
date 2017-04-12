@@ -2,8 +2,9 @@
 
 namespace Source\Controller\Authorization;
 
-use Respect\Validation\Validator as Validator;
+use Psr\Http\Message\ResponseInterface;
 use Source\Controller\AbstractController;
+use Source\Models\Helpers\FormValidators\SignUpFormValidator;
 
 class SignUpController extends AbstractController {
 
@@ -11,7 +12,7 @@ class SignUpController extends AbstractController {
      * This is the index of the registration process,
      * which shows the registration form.
      */
-    public function getRegistration($request, $response) {
+    public function getRegistration($request,ResponseInterface $response) {
         return $this->view->render($response, '@authorization/signup.twig');
     }
 
@@ -19,7 +20,10 @@ class SignUpController extends AbstractController {
      * This function receives the data, typed in and submitted by the user
      * at the signup.twig-view.
      */
-    public function postRegistration($request, $response) {
-        die("The postRegistration functionality has to be implemented");
+    public function postRegistration($request,ResponseInterface $response) {
+        $v = new SignUpFormValidator($this->userDAO);
+        var_dump($v);
+        $result = $v->validate($request);
+        die("The postRegistration functionality has to be implemented, but valitdation result is: " . var_dump($result));
     }
 }
