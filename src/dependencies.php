@@ -16,6 +16,10 @@ use Source\Models\Auth\Auth;
 use Source\Models\DAOs\UserDAO;
 use Source\Models\DBAdapters\DatabaseAdapter;
 use Respect\Validation\Validator as v;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\ArrayDenormalizer;
+use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 /*
  * DIC configuration
@@ -64,6 +68,15 @@ $container['flash'] = function () {
     return new Messages();
 };
 
+/*
+ * Symfony-Serializer - A JSON (De-)Serializer
+ */
+$container['serializer'] = function(){
+    $encoders = array(new JsonEncoder());
+    $normalizers = array(new GetSetMethodNormalizer(), new ArrayDenormalizer());
+    return new Serializer($normalizers, $encoders);
+};
+
 
 // *********************************** Internal System ******************************************
 
@@ -100,19 +113,19 @@ v::with('Source\\Models\\Helpers\\FormValidators\\Validation\\Rules\\');
 
 // *** Controllers ***
 $container['HomeController'] = function (ContainerInterface $container) {
-    return new HomeController($container->get('view'),$container->get('router'),$container->get('userDAO'));
+    return new HomeController($container);
 };
 $container['SignInController'] = function (ContainerInterface $container) {
-    return new SignInController($container->get('view'),$container->get('router'),$container->get('userDAO'));
+    return new SignInController($container);
 };
 $container['SignUpController'] = function (ContainerInterface $container) {
-    return new SignUpController($container->get('view'),$container->get('router'),$container->get('userDAO'));
+    return new SignUpController($container);
 };
 $container['PriceCalculationController'] = function (ContainerInterface $container) {
-    return new PriceCalculationController($container->get('view'),$container->get('router'),$container->get('userDAO'));
+    return new PriceCalculationController($container);
 };
 $container['DashboardController'] = function (ContainerInterface $container) {
-    return new DashboardController($container->get('view'),$container->get('router'),$container->get('userDAO'));
+    return new DashboardController($container);
 };
 
 // *** Data Access Objects (DAOs)***

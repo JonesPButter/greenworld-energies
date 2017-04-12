@@ -1,0 +1,24 @@
+[2017-04-12 19:53:23] slim-app.INFO: application/json [] {"uid":"729f81e"}
+[2017-04-12 19:53:39] slim-app.INFO: application/x-www-form-urlencoded [] {"uid":"e0d729c"}
+[2017-04-12 19:54:16] slim-app.INFO: application/x-www-form-urlencoded [] {"uid":"53524b5"}
+[2017-04-12 19:54:35] slim-app.INFO: application/json [] {"uid":"3f66674"}
+[2017-04-12 20:00:49] slim-app.INFO: application/json [] {"uid":"775e727"}
+[2017-04-12 20:00:51] slim-app.INFO: application/json [] {"uid":"92abde7"}
+[2017-04-12 20:03:55] slim-app.INFO: Array [] {"uid":"e86ac22"}
+[2017-04-12 20:05:19] slim-app.INFO:  [] {"uid":"769774f"}
+[2017-04-12 20:07:02] slim-app.INFO:    [{"name":"email","value":"asd"},{"name":"password","value":"sfd"},{"name":"passwordRetyped","value":"sdf"}] [] {"uid":"e393806"}
+[2017-04-12 20:07:42] slim-app.INFO:  [] {"uid":"805c84a"}
+[2017-04-12 20:31:01] slim-app.INFO:  [] {"uid":"fd8921e"}
+[2017-04-12 20:31:39] slim-app.INFO:  [] {"uid":"15e8261"}
+[2017-04-12 20:32:11] slim-app.INFO:  [] {"uid":"3db2dbd"}
+[2017-04-12 20:39:43] slim-app.INFO:   [] {"uid":"b72e2e3"}
+[2017-04-12 20:41:03] slim-app.INFO:  [] {"uid":"0a5d7ca"}
+[2017-04-12 20:41:18] slim-app.INFO:  [] {"uid":"a1bcaf3"}
+[2017-04-12 20:42:14] slim-app.INFO:    [{"name":"email","value":"ygfg"},{"name":"password","value":"hgfj"},{"name":"passwordRetyped","value":"hk"}] [] {"uid":"9575db6"}
+[2017-04-12 20:43:00] slim-app.INFO:   [] {"uid":"14c1694"}
+[2017-04-12 20:46:00] slim-app.INFO:     [] {"uid":"a7d9250"}
+[2017-04-12 20:46:43] slim-app.INFO:    [{"name":"email","value":"fdgsfg"},{"name":"password","value":"fjf"},{"name":"passwordRetyped","value":"dfhgd"}] [] {"uid":"38b7d48"}
+[2017-04-12 20:47:40] slim-app.INFO:     [] {"uid":"739580b"}
+[2017-04-12 20:47:48] slim-app.INFO:     [] {"uid":"88daa65"}
+[2017-04-12 20:48:53] slim-app.INFO:     [] {"uid":"53b2a08"}
+[2017-04-12 20:49:03] slim-app.INFO:     [] {"uid":"50ea978"}

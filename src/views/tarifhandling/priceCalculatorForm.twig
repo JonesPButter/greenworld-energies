@@ -1,6 +1,6 @@
 <div class="col-sm-4">
     <div class="well well-sm priceCalculator">
-        <form name="priceCalculator" action="{{ path_for('calculator.post') }}" method="post">
+        <form name="priceCalculatorForm" action="{{ path_for('calculator.post') }}" method="post">
             <div class="form-group ">
                 <label for="postalcode">Postleitzahl:</label>
                 <input id="postalcode" type="text" class="form-control" name="postalcode"
@@ -41,21 +41,4 @@
     </div>
 </div>
 
-<script>
-
-    function checkRadioButtons(){
-        var length = document.priceCalculator.optradio.length;
-        var value = "";
-        for (i = 0; i < length; i++) {
-
-            if ( document.priceCalculator.optradio[i].checked ) {
-
-                value = document.priceCalculator.optradio[i].value;
-                document.priceCalculator.kwh.value=value;
-                break;
-            }
-        }
-    }
-
-</script>
 

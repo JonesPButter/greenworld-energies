@@ -9,8 +9,6 @@
 namespace Source\Controller\Authorization;
 
 
-use Slim\Interfaces\RouterInterface;
-use Slim\Views\Twig;
 use Source\Controller\AbstractController;
 
 class SignInController extends AbstractController
