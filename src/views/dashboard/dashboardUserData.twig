@@ -1,18 +1,54 @@
 {% extends '@dashboard/dashboard.twig' %}
 
 {% block dashboardpage %}
-    <h1 class="page-header"> <i class="fa fa-user-circle" aria-hidden="true"></i> Meine Daten </h1>
+
+    <h1 class="page-header"><i class="fa fa-user-circle" aria-hidden="true"></i> Meine Daten </h1>
 
     <div class="row placeholders">
 
-        <div class="col-xs-6 col-sm-3 placeholder">
-            <h4>Email</h4>
-            <span class="text-muted">{{ auth.user.getEmail }}</span>
-        </div>
-        <div class="col-xs-6 col-sm-3 placeholder">
-
-            <h4>CreatedAt</h4>
-            <span class="text-muted">Something else</span>
+        <div class="col-xs-8 col-sm-8 placeholder">
+            <div class="table-responsive">
+                <table class="table">
+                    <caption>Allgemein</caption>
+                    <tr>
+                        <th>Vorname:</th>
+                        <td>John</td>
+                    </tr>
+                    <tr>
+                        <th>Nachname:</th>
+                        <td>Doe</td>
+                    </tr>
+                    <tr>
+                        <th>Email:</th>
+                        <td>{{ auth.user.getEmail }}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="table-responsive">
+                <table class="table">
+                    <caption>Adresse</caption>
+                    <tr>
+                        <th>Straße:</th>
+                        <td>Teststraße</td>
+                    </tr>
+                    <tr>
+                        <th>Hausnummer:</th>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <th>Postleitzahl:</th>
+                        <td>1234567</td>
+                    </tr>
+                    <tr>
+                        <th>Stadt</th>
+                        <td>Teststadt</td>
+                    </tr>
+                    <tr>
+                        <th>Land</th>
+                        <td>Deutschland</td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
 {% endblock %}

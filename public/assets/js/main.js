@@ -45,6 +45,7 @@ $(document).ready(function(){
     });
 
     $("#signInForm").on('submit', function(event) {
+        console.debug("try to sign in...");
         var $form = $(this);
         var formdata = $form.serializeArray();
         var data = JSON.stringify({email:formdata[0].value, password:formdata[1].value});

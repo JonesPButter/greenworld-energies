@@ -6,7 +6,7 @@
             <div class="panel panel-default border-color">
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
-                    <form action="{{ path_for('/userservice/signIn.post') }}" method="post">
+                    <form id="signInForm" action="{{ path_for('/userservice/signIn.post') }}" method="post">
                         <div class="form-group {{ errors.email ? 'has-error' : '' }}">
                             <label for="email">Email</label>
                             <input type="text" name="email" id="email" class="form-control" value="{{ old.email }}">

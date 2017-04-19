@@ -37,7 +37,7 @@ class Auth
     public function signIn($email, $password){
         $user = $this->userDAO->getUserByEmail($email);
         if(isset($user)){
-            if(password_verify($password,$user->getPassword()) && $user->isVerified()){
+            if(password_verify($password,$user->getPassword())){
                 $_SESSION['user'] = $user->getId();
                 return true;
             }

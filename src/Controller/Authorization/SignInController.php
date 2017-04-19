@@ -25,7 +25,7 @@ class SignInController extends AbstractController
         if(!$verified){
             return $response->withJson(array("error:" => "Password or Email is invalid."),405);
         } else{
-            $redirect = array('redirect' => $this->router->pathFor("/dashboard"));
+            $redirect = array('redirect' => $this->router->pathFor("/dashboard/data"));
             return $response->withJson($redirect, 303);
         }
     }
