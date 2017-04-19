@@ -11,7 +11,7 @@ namespace Source\Models\Helpers\FormValidators;
 
 use Psr\Http\Message\RequestInterface;
 
-class SignInFormValidator extends FormValidator {
+class SignInJsonFormValidator extends JsonFormValidator {
 
     public function validate(RequestInterface $input) {
 

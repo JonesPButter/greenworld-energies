@@ -21,6 +21,6 @@ class SignInController extends AbstractController
 
     public function postLogin($request, $response, $args){
 
-        die("Route login.post should be implemented!");
+        return $response->withRedirect($this->router->pathFor("/dashboard"));
     }
 }

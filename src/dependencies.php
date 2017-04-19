@@ -18,7 +18,7 @@ use Source\Models\DBAdapters\DatabaseAdapter;
 use Respect\Validation\Validator as v;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ArrayDenormalizer;
-use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
 
 /*
@@ -67,16 +67,6 @@ $container['view'] = function (ContainerInterface $container) {
 $container['flash'] = function () {
     return new Messages();
 };
-
-/*
- * Symfony-Serializer - A JSON (De-)Serializer
- */
-$container['serializer'] = function(){
-    $encoders = array(new JsonEncoder());
-    $normalizers = array(new GetSetMethodNormalizer(), new ArrayDenormalizer());
-    return new Serializer($normalizers, $encoders);
-};
-
 
 // *********************************** Internal System ******************************************
 

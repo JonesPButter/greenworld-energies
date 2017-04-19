@@ -12,7 +12,6 @@ use Psr\Container\ContainerInterface;
 use Slim\Interfaces\RouterInterface;
 use Slim\Views\Twig;
 use Source\Models\DAOs\UserDAO;
-use Symfony\Component\Serializer\Serializer;
 
 abstract class AbstractController
 {
@@ -24,8 +23,6 @@ abstract class AbstractController
     protected $userDAO;
     /** @var Logger */
     protected $logger;
-    /** @var Serializer */
-    protected $serializer;
 
     //Constructor
     public function __construct(ContainerInterface $container) {
@@ -33,6 +30,5 @@ abstract class AbstractController
         $this->router = $container->get("router");
         $this->userDAO = $container->get("userDAO");
         $this->logger = $container->get("logger");
-        $this->serializer = $container->get("serializer");
     }
 }

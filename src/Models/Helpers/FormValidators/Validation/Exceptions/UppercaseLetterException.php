@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: jonas
- * Date: 12.04.2017
- * Time: 13:17
+ * Date: 19.04.2017
+ * Time: 12:36
  */
 
 namespace Source\Models\Helpers\FormValidators\Validation\Exceptions;
@@ -11,11 +11,10 @@ namespace Source\Models\Helpers\FormValidators\Validation\Exceptions;
 
 use Respect\Validation\Exceptions\ValidationException;
 
-class EmailAvailableException extends ValidationException {
-
+class UppercaseLetterException extends ValidationException {
     public static $defaultTemplates = [
         self::MODE_DEFAULT => [
-            self::STANDARD => 'Email is already taken.',
+            self::STANDARD => 'There is an uppercase letter missing.',
         ],
     ];
 }

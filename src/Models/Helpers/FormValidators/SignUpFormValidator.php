@@ -1,9 +1,10 @@
 <?php
 
 namespace Source\Models\Helpers\FormValidators;
-use Psr\Http\Message\RequestInterface;
+
 use Respect\Validation\Exceptions\NestedValidationException;
 use Respect\Validation\Validator;
+use Source\Models\DAOs\UserDAO;
 
 /**
  * Created by PhpStorm.
@@ -11,21 +12,35 @@ use Respect\Validation\Validator;
  * Date: 12.04.2017
  * Time: 12:29
  */
-class SignUpFormValidator extends FormValidator {
+class SignUpFormValidator extends JsonFormValidator {
+
+    function __construct(UserDAO $userDAO) {
+        parent::__construct($userDAO);
+    }
 
     /**
      * @param $input - FormModel
      * @return bool true, if the FormModel could be validated
      */
-    public function validate(RequestInterface $input){
+    public function validate($input) {
         $result = false;
-        $emailValidator = Validator::alnum()->emailAvailable($this->userDAO);
-        $passwordValidator = Validator::length(8,40)->equals($input->getParam('passwordRetyped'));
-        try{
-            $result = $emailValidator->validate($input->getParam('email'))
-                && $passwordValidator->validate($input->getParam('password'));
-        } catch(NestedValidationException $e){
-            $_SESSION['errors'] = $e;
+        if ($this->checkFieldExistence($input,["email", "password", "passwordRetyped"])){
+            $emailValidator = Validator::email()->emailAvailable($this->userDAO);
+            $passwordValidator = Validator::length(8, 40)
+                    ->uppercaseLetter()->lowercaseLetter()
+                    ->containsNumber()->equals($input["password"]);
+            try{
+                $emailValidator->assert($input["email"]);
+
+                try{
+                    $passwordValidator->assert($input["passwordRetyped"]);
+                    $result = true;
+                } catch(NestedValidationException $e){
+                    $this->errors["password"] = $e->getMessages();
+                }
+            } catch(NestedValidationException $e){
+                $this->errors["email"] = $e->getMessages();
+            }
         }
         return $result;
     }

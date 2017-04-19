@@ -9,7 +9,7 @@
 namespace Source\Models\FormModels;
 
 
-class SignUpFormModel {
+class SignUpFormModel extends FormModel {
 
     private $email;
     private $password;
@@ -22,6 +22,9 @@ class SignUpFormModel {
      * @param $passwordRetyped
      */
     public function __construct($email, $password, $passwordRetyped) {
+        parent::__construct([
+            "email", "password", "passwordRetyped"
+        ]);
         $this->email = $email;
         $this->password = $password;
         $this->passwordRetyped = $passwordRetyped;

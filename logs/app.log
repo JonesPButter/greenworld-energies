@@ -1,57 +1,78 @@
-[2017-04-12 19:53:23] slim-app.INFO: application/json [] {"uid":"729f81e"}
-[2017-04-12 19:53:39] slim-app.INFO: application/x-www-form-urlencoded [] {"uid":"e0d729c"}
-[2017-04-12 19:54:16] slim-app.INFO: application/x-www-form-urlencoded [] {"uid":"53524b5"}
-[2017-04-12 19:54:35] slim-app.INFO: application/json [] {"uid":"3f66674"}
-[2017-04-12 20:00:49] slim-app.INFO: application/json [] {"uid":"775e727"}
-[2017-04-12 20:00:51] slim-app.INFO: application/json [] {"uid":"92abde7"}
-[2017-04-12 20:03:55] slim-app.INFO: Array [] {"uid":"e86ac22"}
-[2017-04-12 20:05:19] slim-app.INFO:  [] {"uid":"769774f"}
-[2017-04-12 20:07:02] slim-app.INFO:    [{"name":"email","value":"asd"},{"name":"password","value":"sfd"},{"name":"passwordRetyped","value":"sdf"}] [] {"uid":"e393806"}
-[2017-04-12 20:07:42] slim-app.INFO:  [] {"uid":"805c84a"}
-[2017-04-12 20:31:01] slim-app.INFO:  [] {"uid":"fd8921e"}
-[2017-04-12 20:31:39] slim-app.INFO:  [] {"uid":"15e8261"}
-[2017-04-12 20:32:11] slim-app.INFO:  [] {"uid":"3db2dbd"}
-[2017-04-12 20:39:43] slim-app.INFO:   [] {"uid":"b72e2e3"}
-[2017-04-12 20:41:03] slim-app.INFO:  [] {"uid":"0a5d7ca"}
-[2017-04-12 20:41:18] slim-app.INFO:  [] {"uid":"a1bcaf3"}
-[2017-04-12 20:42:14] slim-app.INFO:    [{"name":"email","value":"ygfg"},{"name":"password","value":"hgfj"},{"name":"passwordRetyped","value":"hk"}] [] {"uid":"9575db6"}
-[2017-04-12 20:43:00] slim-app.INFO:   [] {"uid":"14c1694"}
-[2017-04-12 20:46:00] slim-app.INFO:     [] {"uid":"a7d9250"}
-[2017-04-12 20:46:43] slim-app.INFO:    [{"name":"email","value":"fdgsfg"},{"name":"password","value":"fjf"},{"name":"passwordRetyped","value":"dfhgd"}] [] {"uid":"38b7d48"}
-[2017-04-12 20:47:40] slim-app.INFO:     [] {"uid":"739580b"}
-[2017-04-12 20:47:48] slim-app.INFO:     [] {"uid":"88daa65"}
-[2017-04-12 20:48:53] slim-app.INFO:     [] {"uid":"53b2a08"}
-[2017-04-12 20:49:03] slim-app.INFO:     [] {"uid":"50ea978"}
-[2017-04-13 09:56:13] slim-app.INFO: array(4) {   ["email"]=>   string(3) "asd"   ["password"]=>   string(3) "asd"   ["passwordRetyped"]=>   string(3) "sdf"   ["submit"]=>   string(0) "" }  [] {"uid":"128e526"}
-[2017-04-13 09:57:47] slim-app.INFO: array(3) {   [0]=>   array(2) {     ["name"]=>     string(5) "email"     ["value"]=>     string(4) "ewer"   }   [1]=>   array(2) {     ["name"]=>     string(8) "password"     ["value"]=>     string(4) "werq"   }   [2]=>   array(2) {     ["name"]=>     string(15) "passwordRetyped"     ["value"]=>     string(6) "wqerqr"   } }  [] {"uid":"16fc3ba"}
-[2017-04-13 09:59:26] slim-app.INFO: <br /> <b>Warning</b>:  json_decode() expects parameter 1 to be string, array given in <b>E:\Dokumente\Programming\Git-Projekte\greenworld-energies\src\Controller\Authorization\SignUpController.php</b> on line <b>28</b><br /> NULL  [] {"uid":"5a8bc0b"}
-[2017-04-13 10:03:52] slim-app.INFO: object(Slim\Http\RequestBody)#82 (7) {   ["stream":protected]=>   resource(76) of type (stream)   ["meta":protected]=>   array(6) {     ["wrapper_type"]=>     string(3) "PHP"     ["stream_type"]=>     string(4) "TEMP"     ["mode"]=>     string(3) "w+b"     ["unread_bytes"]=>     int(0)     ["seekable"]=>     bool(true)     ["uri"]=>     string(10) "php://temp"   }   ["readable":protected]=>   bool(true)   ["writable":protected]=>   NULL   ["seekable":protected]=>   bool(true)   ["size":protected]=>   NULL   ["isPipe":protected]=>   bool(false) }  [] {"uid":"cbcaed4"}
-[2017-04-13 10:04:27] slim-app.INFO: array(3) {   [0]=>   array(2) {     ["name"]=>     string(5) "email"     ["value"]=>     string(3) "sdf"   }   [1]=>   array(2) {     ["name"]=>     string(8) "password"     ["value"]=>     string(2) "fd"   }   [2]=>   array(2) {     ["name"]=>     string(15) "passwordRetyped"     ["value"]=>     string(2) "df"   } }  [] {"uid":"06ec066"}
-[2017-04-13 10:04:50] slim-app.INFO: Array (     [0] => Array         (             [name] => email             [value] => sdf         )      [1] => Array         (             [name] => password             [value] => fd         )      [2] => Array         (             [name] => passwordRetyped             [value] => df         )  )  [] {"uid":"9e656a3"}
-[2017-04-13 10:14:53] slim-app.INFO: {"email":"test","password":"hasd","passwordRetyped":"hssd"} [] {"uid":"c21752a"}
-[2017-04-13 10:28:36] slim-app.INFO:  [] {"uid":"76df3fd"}
-[2017-04-13 10:28:55] slim-app.INFO:  [] {"uid":"7bff384"}
-[2017-04-13 10:29:14] slim-app.INFO: NULL  [] {"uid":"1784a51"}
-[2017-04-13 10:36:17] slim-app.INFO: NULL  [] {"uid":"1ce2d7c"}
-[2017-04-13 10:37:10] slim-app.INFO: array(3) {   [0]=>   array(2) {     ["name"]=>     string(5) "email"     ["value"]=>     string(2) "as"   }   [1]=>   array(2) {     ["name"]=>     string(8) "password"     ["value"]=>     string(3) "ads"   }   [2]=>   array(2) {     ["name"]=>     string(15) "passwordRetyped"     ["value"]=>     string(3) "asd"   } }  [] {"uid":"0a79eed"}
-[2017-04-13 10:37:40] slim-app.INFO: Array (     [0] => Array         (             [name] => email             [value] => as         )      [1] => Array         (             [name] => password             [value] => ads         )      [2] => Array         (             [name] => passwordRetyped             [value] => asd         )  )  [] {"uid":"6c8ee60"}
-[2017-04-13 10:39:45] slim-app.INFO: <br /> <b>Notice</b>:  Undefined index: email in <b>E:\Dokumente\Programming\Git-Projekte\greenworld-energies\src\Controller\Authorization\SignUpController.php</b> on line <b>31</b><br />  [] {"uid":"6d23f08"}
-[2017-04-13 10:41:08] slim-app.INFO: <br /> <b>Notice</b>:  Undefined index: email in <b>E:\Dokumente\Programming\Git-Projekte\greenworld-energies\src\Controller\Authorization\SignUpController.php</b> on line <b>31</b><br /> NULL  [] {"uid":"33ffa14"}
-[2017-04-13 10:41:27] slim-app.INFO: array(3) {   [0]=>   array(2) {     ["name"]=>     string(5) "email"     ["value"]=>     string(2) "as"   }   [1]=>   array(2) {     ["name"]=>     string(8) "password"     ["value"]=>     string(3) "ads"   }   [2]=>   array(2) {     ["name"]=>     string(15) "passwordRetyped"     ["value"]=>     string(3) "asd"   } }  [] {"uid":"425cd18"}
-[2017-04-13 10:42:36] slim-app.INFO: <br /> <b>Notice</b>:  Undefined index: email in <b>E:\Dokumente\Programming\Git-Projekte\greenworld-energies\src\Controller\Authorization\SignUpController.php</b> on line <b>31</b><br /> NULL  [] {"uid":"9567c85"}
-[2017-04-13 10:43:26] slim-app.INFO: array(4) {   ["foo"]=>   string(3) "bar"   ["bar"]=>   string(3) "foo"   [100]=>   int(-100)   [-100]=>   int(100) }  [] {"uid":"6155777"}
-[2017-04-13 11:07:57] slim-app.INFO: array(4) {   ["foo"]=>   string(3) "bar"   ["bar"]=>   string(3) "foo"   [100]=>   int(-100)   [-100]=>   int(100) }  [] {"uid":"5835c1d"}
-[2017-04-13 11:08:32] slim-app.INFO: array(3) {   [0]=>   array(2) {     ["name"]=>     string(10) "form.email"     ["value"]=>     string(3) "asd"   }   [1]=>   array(2) {     ["name"]=>     string(13) "form.password"     ["value"]=>     string(3) "asd"   }   [2]=>   array(2) {     ["name"]=>     string(20) "form.passwordRetyped"     ["value"]=>     string(3) "asd"   } }  [] {"uid":"73fc0c8"}
-[2017-04-13 11:14:39] slim-app.INFO: NULL  [] {"uid":"51fb62e"}
-[2017-04-13 11:20:57] slim-app.INFO: array(4) {   ["email"]=>   string(3) "asd"   ["password"]=>   string(3) "asd"   ["passwordRetyped"]=>   string(3) "asd"   ["submit"]=>   string(0) "" }  [] {"uid":"c0ec0e1"}
-[2017-04-13 11:21:46] slim-app.INFO: array(4) {   ["email"]=>   string(7) "asdaasd"   ["password"]=>   string(2) "as"   ["passwordRetyped"]=>   string(3) "asd"   ["submit"]=>   string(0) "" }  [] {"uid":"6359bd6"}
-[2017-04-13 11:22:04] slim-app.INFO: array(4) {   ["email"]=>   string(3) "asd"   ["password"]=>   string(3) "asd"   ["passwordRetyped"]=>   string(3) "asd"   ["submit"]=>   string(0) "" }  [] {"uid":"b85ce54"}
-[2017-04-13 11:22:23] slim-app.INFO: NULL  [] {"uid":"8364c89"}
-[2017-04-13 11:25:13] slim-app.INFO: array(4) {   ["email"]=>   string(7) "asdaasd"   ["password"]=>   string(3) "asd"   ["passwordRetyped"]=>   string(3) "asd"   ["submit"]=>   string(0) "" }  [] {"uid":"cf6b03c"}
-[2017-04-13 11:25:34] slim-app.INFO: array(4) {   ["email"]=>   string(3) "asd"   ["password"]=>   string(3) "asd"   ["passwordRetyped"]=>   string(2) "as"   ["submit"]=>   string(0) "" }  [] {"uid":"d741c6a"}
-[2017-04-13 11:25:52] slim-app.INFO: NULL  [] {"uid":"da4e1f2"}
-[2017-04-13 11:26:05] slim-app.INFO: NULL  [] {"uid":"7453ea6"}
-[2017-04-13 11:26:43] slim-app.INFO: NULL  [] {"uid":"079e4d5"}
-[2017-04-13 11:27:18] slim-app.INFO: NULL  [] {"uid":"6a5473a"}
-[2017-04-13 11:28:26] slim-app.INFO: array(3) {   ["email"]=>   string(3) "asd"   ["password"]=>   string(3) "asd"   ["passwordRetyped"]=>   string(3) "asd" }  [] {"uid":"da3f318"}
-[2017-04-13 11:30:55] slim-app.INFO: array(3) {   ["email"]=>   string(3) "asd"   ["password"]=>   string(3) "asd"   ["passwordRetyped"]=>   string(3) "asd" }  [] {"uid":"4c51242"}
+[2017-04-18 16:50:24] slim-app.INFO: string(3) "asd"  [] {"uid":"ef17b81"}
+[2017-04-18 17:12:04] slim-app.INFO: <br /> <b>Notice</b>:  Undefined property: stdClass::$email in <b>E:\Dokumente\Programming\Git-Projekte\greenworld-energies\src\Models\Helpers\FormValidators\SignUpFormValidator.php</b> on line <b>25</b><br /> string(39) "Validierung der Eingabe fehlgeschlagen."  [] {"uid":"17883d2"}
+[2017-04-18 17:14:34] slim-app.INFO: string(39) "Validierung der Eingabe fehlgeschlagen."  [] {"uid":"5082ad2"}
+[2017-04-18 17:19:55] slim-app.INFO: <br /> <b>Notice</b>:  Undefined index: errors in <b>E:\Dokumente\Programming\Git-Projekte\greenworld-energies\src\Controller\Authorization\SignUpController.php</b> on line <b>32</b><br /> NULL  [] {"uid":"e1f53ab"}
+[2017-04-18 17:26:19] slim-app.INFO: string(15) "ValidationError"  [] {"uid":"8b55921"}
+[2017-04-18 17:32:09] slim-app.INFO:  [] {"uid":"f903780"}
+[2017-04-18 17:33:57] slim-app.INFO:  [] {"uid":"7d0b9cc"}
+[2017-04-18 17:34:48] slim-app.INFO: <br /> <b>Notice</b>:  Undefined property: stdClass::$email in <b>E:\Dokumente\Programming\Git-Projekte\greenworld-energies\src\Models\Helpers\FormValidators\SignUpFormValidator.php</b> on line <b>24</b><br />  [] {"uid":"5829242"}
+[2017-04-18 17:35:35] slim-app.INFO: <br /> <b>Notice</b>:  Undefined property: stdClass::$email in <b>E:\Dokumente\Programming\Git-Projekte\greenworld-energies\src\Models\Helpers\FormValidators\SignUpFormValidator.php</b> on line <b>24</b><br />  [] {"uid":"a4c8e86"}
+[2017-04-18 18:52:08] slim-app.INFO: string(15) "ValidationError"  [] {"uid":"403967f"}
+[2017-04-18 18:52:18] slim-app.INFO: string(15) "ValidationError"  [] {"uid":"c61bbb0"}
+[2017-04-18 19:03:16] slim-app.INFO: array(3) {   ["email"]=>   string(27) "The field email is missing."   ["password"]=>   string(30) "The field password is missing."   ["retyped"]=>   string(29) "The field retyped is missing." }  [] {"uid":"e5f71b7"}
+[2017-04-18 19:08:00] slim-app.INFO: array(3) {   ["email"]=>   string(27) "The field email is missing."   ["password"]=>   string(30) "The field password is missing."   ["passwordRetyped"]=>   string(37) "The field passwordRetyped is missing." }  [] {"uid":"73788b1"}
+[2017-04-18 19:08:14] slim-app.INFO: array(3) {   ["email"]=>   string(27) "The field email is missing."   ["password"]=>   string(30) "The field password is missing."   ["passwordRetyped"]=>   string(37) "The field passwordRetyped is missing." }  [] {"uid":"ed46347"}
+[2017-04-18 19:18:11] slim-app.INFO: array(1) {   ["email"]=>   string(27) "The field email is missing." }  [] {"uid":"92c2d40"}
+[2017-04-18 19:18:46] slim-app.INFO: array(1) {   ["password"]=>   string(26) "The password was not valid" }  [] {"uid":"c7549a8"}
+[2017-04-19 00:24:50] slim-app.INFO: array(2) {   ["email"]=>   string(30) "The email address is not valid"   ["password"]=>   string(26) "The password was not valid" }  [] {"uid":"9297b91"}
+[2017-04-19 00:47:35] slim-app.INFO:  [] {"uid":"6cfeb5f"}
+[2017-04-19 00:48:02] slim-app.INFO:  [] {"uid":"d879cb7"}
+[2017-04-19 00:52:29] slim-app.INFO:  [] {"uid":"375bfd0"}
+[2017-04-19 00:53:07] slim-app.INFO:  [] {"uid":"1d074f9"}
+[2017-04-19 00:55:57] slim-app.INFO: bool(false)  [] {"uid":"5581f1b"}
+[2017-04-19 00:56:23] slim-app.INFO: bool(false)  [] {"uid":"3af74bf"}
+[2017-04-19 00:56:59] slim-app.INFO: bool(false)  [] {"uid":"c61a00a"}
+[2017-04-19 00:58:06] slim-app.INFO: string(2) "13"  [] {"uid":"25dc5c0"}
+[2017-04-19 01:02:08] slim-app.INFO: string(2) "14"  [] {"uid":"3ac99bd"}
+[2017-04-19 01:02:56] slim-app.INFO: string(2) "15"  [] {"uid":"ad2dbce"}
+[2017-04-19 01:03:53] slim-app.INFO: string(2) "16"  [] {"uid":"1e8a324"}
+[2017-04-19 01:04:23] slim-app.INFO: string(2) "17"  [] {"uid":"426b7b3"}
+[2017-04-19 09:39:53] slim-app.INFO: string(2) "18"  [] {"uid":"aee5d00"}
+[2017-04-19 09:52:19] slim-app.INFO: string(2) "19"  [] {"uid":"84512cc"}
+[2017-04-19 09:52:52] slim-app.INFO: bool(false)  [] {"uid":"ccc235d"}
+[2017-04-19 09:54:28] slim-app.INFO: bool(false)  [] {"uid":"07590f0"}
+[2017-04-19 09:55:38] slim-app.INFO: string(2) "22"  [] {"uid":"63d3930"}
+[2017-04-19 09:56:08] slim-app.INFO: bool(false)  [] {"uid":"984715f"}
+[2017-04-19 10:07:05] slim-app.INFO: bool(false)  [] {"uid":"c2797b1"}
+[2017-04-19 10:07:21] slim-app.INFO: bool(false)  [] {"uid":"3360d92"}
+[2017-04-19 12:22:18] slim-app.INFO: string(2) "26"  [] {"uid":"7ff088f"}
+[2017-04-19 12:29:04] slim-app.INFO: string(112) "{"email":["\"testtestes @test.de\" must contain only letters (a-z) and digits (0-9)","Email is already taken."]}"  [] {"uid":"38787f9"}
+[2017-04-19 12:29:55] slim-app.INFO: string(85) "{"email":["\"testtestes@test.de\" must contain only letters (a-z) and digits (0-9)"]}"  [] {"uid":"285a7d5"}
+[2017-04-19 12:30:26] slim-app.INFO:  [] {"uid":"3e7344e"}
+[2017-04-19 12:46:22] slim-app.INFO: string(37) "{"email":["Email is already taken."]}"  [] {"uid":"5c13533"}
+[2017-04-19 12:47:56] slim-app.INFO: string(37) "{"email":["Email is already taken."]}"  [] {"uid":"ae98500"}
+[2017-04-19 12:48:11] slim-app.INFO: string(37) "{"email":["Email is already taken."]}"  [] {"uid":"a50d6a9"}
+[2017-04-19 12:55:01] slim-app.INFO: string(37) "{"email":["Email is already taken."]}"  [] {"uid":"9bfae7c"}
+[2017-04-19 12:58:49] slim-app.INFO: string(37) "{"email":["Email is already taken."]}"  [] {"uid":"94ab62a"}
+[2017-04-19 12:59:02] slim-app.INFO: string(37) "{"email":["Email is already taken."]}"  [] {"uid":"e67196a"}
+[2017-04-19 12:59:03] slim-app.INFO: string(37) "{"email":["Email is already taken."]}"  [] {"uid":"392ad7f"}
+[2017-04-19 13:00:31] slim-app.INFO: string(37) "{"email":["Email is already taken."]}"  [] {"uid":"a31b034"}
+[2017-04-19 13:00:53] slim-app.INFO: string(37) "{"email":["Email is already taken."]}"  [] {"uid":"3dbdd4a"}
+[2017-04-19 13:00:57] slim-app.INFO: string(37) "{"email":["Email is already taken."]}"  [] {"uid":"58d8811"}
+[2017-04-19 13:01:24] slim-app.INFO: string(37) "{"email":["Email is already taken."]}"  [] {"uid":"1c29e9d"}
+[2017-04-19 13:02:14] slim-app.INFO: string(37) "{"email":["Email is already taken."]}"  [] {"uid":"587cec1"}
+[2017-04-19 13:03:03] slim-app.INFO: string(37) "{"email":["Email is already taken."]}"  [] {"uid":"c358dbc"}
+[2017-04-19 13:03:19] slim-app.INFO: string(37) "{"email":["Email is already taken."]}"  [] {"uid":"ff3a8e7"}
+[2017-04-19 13:03:52] slim-app.INFO: string(37) "{"email":["Email is already taken."]}"  [] {"uid":"79dc5dd"}
+[2017-04-19 13:04:27] slim-app.INFO: string(37) "{"email":["Email is already taken."]}"  [] {"uid":"717ba10"}
+[2017-04-19 13:09:27] slim-app.INFO: string(37) "{"email":["Email is already taken."]}"  [] {"uid":"fd421ec"}
+[2017-04-19 13:11:55] slim-app.INFO: 28 [] {"uid":"ec1ce8e"}
+[2017-04-19 13:13:35] slim-app.INFO: string(46) "{"email":["\"hkhjkhkj\" must be valid email"]}"  [] {"uid":"8178b96"}
+[2017-04-19 13:20:36] slim-app.INFO: string(41) "{"email":["\"asd\" must be valid email"]}"  [] {"uid":"4c2fdc7"}
+[2017-04-19 13:21:17] slim-app.INFO: string(41) "{"email":["\"asd\" must be valid email"]}"  [] {"uid":"9680c82"}
+[2017-04-19 13:21:35] slim-app.INFO: string(41) "{"email":["\"asd\" must be valid email"]}"  [] {"uid":"4c6051f"}
+[2017-04-19 13:24:17] slim-app.INFO: string(41) "{"email":["\"asd\" must be valid email"]}"  [] {"uid":"99ae540"}
+[2017-04-19 13:24:55] slim-app.INFO: string(98) "{"password":["There is an uppercase letter missing.","\"13132342525#\" must be equals \"12345\""]}"  [] {"uid":"0b755de"}
+[2017-04-19 16:19:29] slim-app.INFO: 29 [] {"uid":"55dce2d"}
+[2017-04-19 16:28:34] slim-app.INFO: 30 [] {"uid":"21ecd03"}
+[2017-04-19 16:29:22] slim-app.INFO: 31 [] {"uid":"392eaed"}
+[2017-04-19 16:34:04] slim-app.INFO: 32 [] {"uid":"8f6d418"}
+[2017-04-19 16:34:17] slim-app.INFO: 33 [] {"uid":"23f0f32"}
+[2017-04-19 16:34:57] slim-app.INFO: 34 [] {"uid":"2bf9576"}
+[2017-04-19 16:35:10] slim-app.INFO: 35 [] {"uid":"3ef00a9"}
+[2017-04-19 16:37:25] slim-app.INFO: 36 [] {"uid":"24c7a36"}
+[2017-04-19 16:38:43] slim-app.INFO: 37 [] {"uid":"1cca036"}
+[2017-04-19 16:39:30] slim-app.INFO: 38 [] {"uid":"0cf0d9d"}
+[2017-04-19 17:41:54] slim-app.INFO: 39 [] {"uid":"3edafee"}
+[2017-04-19 17:44:30] slim-app.INFO: 40 [] {"uid":"1caa72d"}
+[2017-04-19 17:50:16] slim-app.INFO: 41 [] {"uid":"82fd575"}
