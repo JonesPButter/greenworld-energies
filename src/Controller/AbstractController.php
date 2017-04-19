@@ -11,6 +11,7 @@ use Monolog\Logger;
 use Psr\Container\ContainerInterface;
 use Slim\Interfaces\RouterInterface;
 use Slim\Views\Twig;
+use Source\Models\Auth\Auth;
 use Source\Models\DAOs\UserDAO;
 
 abstract class AbstractController
@@ -23,6 +24,8 @@ abstract class AbstractController
     protected $userDAO;
     /** @var Logger */
     protected $logger;
+    /** @var Auth */
+    protected $auth;
 
     //Constructor
     public function __construct(ContainerInterface $container) {
@@ -30,5 +33,6 @@ abstract class AbstractController
         $this->router = $container->get("router");
         $this->userDAO = $container->get("userDAO");
         $this->logger = $container->get("logger");
+        $this->auth = $container->get("auth");
     }
 }

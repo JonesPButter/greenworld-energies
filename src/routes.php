@@ -8,6 +8,8 @@
 // **************************** ROUTES ****************************
 
 // error-handling
+use Source\Middleware\AuthorisationMiddleware;
+
 $app->get("/unauthorized", function($request, $response) use($container){
     return $container->get('view')->render($response, '@views/unauthorizedPage.twig');
 })->setName("unauthorized");
